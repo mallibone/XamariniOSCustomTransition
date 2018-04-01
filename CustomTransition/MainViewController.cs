@@ -6,47 +6,51 @@ namespace CustomTransition
 {
     public class MainViewController : UIViewController
     {
-        UIButton button;
-        public UIButton RoundButton => button;
+        UIButton _button;
+        UIButton _button2;
+
+        public UIButton RoundButton => _button;
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
 
+            Title = "Custom transition";
+
             View.BackgroundColor = UIColor.White;
 
-            button = new UIButton(UIButtonType.System);
-            button.BackgroundColor = UIColor.Purple;
-            button.SetTitleColor(UIColor.White, UIControlState.Normal);
-            button.SetTitle("Gnabber", UIControlState.Normal);
-            View.AddSubview(button);
-            button.AutoCenterInSuperview();
+            _button = new UIButton(UIButtonType.System);
+            _button.BackgroundColor = UIColor.Purple;
+            _button.SetTitleColor(UIColor.White, UIControlState.Normal);
+            _button.SetTitle("Gnabber", UIControlState.Normal);
+            View.AddSubview(_button);
+            _button.AutoCenterInSuperview();
 
-            var button2 = new UIButton(UIButtonType.System);
-            button2.SetTitle("Go to view predefined", UIControlState.Normal);
+            _button2 = new UIButton(UIButtonType.System);
+            _button2.SetTitle("Go to view predefined", UIControlState.Normal);
 
-            View.AddSubview(button2);
-            button2.BackgroundColor = UIColor.Purple;
-            button2.SetTitleColor(UIColor.White, UIControlState.Normal);
-            button2.AutoAlignAxisToSuperviewAxis(ALAxis.Vertical);
-            button2.AutoPinToBottomLayoutGuideOfViewController(this, 32);
+            View.AddSubview(_button2);
+            _button2.BackgroundColor = UIColor.Purple;
+            _button2.SetTitleColor(UIColor.White, UIControlState.Normal);
+            _button2.AutoAlignAxisToSuperviewAxis(ALAxis.Vertical);
+            _button2.AutoPinToBottomLayoutGuideOfViewController(this, 32);
 
-            button.TouchUpInside += (e, s) =>
+            _button.TouchUpInside += (e, s) =>
             {
                 var vc = new ModalViewController(this)
                 {
                     ModalPresentationStyle = UIModalPresentationStyle.Custom,
-                    TransitioningDelegate = new GrowTransitioningDelegate(button)
+                    TransitioningDelegate = new GrowTransitioningDelegate(_button)
                 };
 
                 NavigationController.PresentViewController(vc, true, null);
             };
 
-            button2.TouchUpInside += (e, s) =>
+            _button2.TouchUpInside += (e, s) =>
             {
                 var vc = new ModalViewController(this)
                 {
                     ModalPresentationStyle = UIModalPresentationStyle.Custom,
-                    TransitioningDelegate = new GrowTransitioningDelegate(button2)
+                    TransitioningDelegate = new GrowTransitioningDelegate(_button2)
                 };
                 NavigationController.PresentViewController(vc, true, null);
             };
@@ -55,8 +59,11 @@ namespace CustomTransition
         public override void ViewDidLayoutSubviews()
         {
             base.ViewDidLayoutSubviews();
-            button.Frame = new CGRect(button.Frame.X, button.Frame.Y, button.Frame.Width + 8, button.Frame.Height);
-            button.Layer.CornerRadius = 5;
+            _button.Frame = new CGRect(_button.Frame.X, _button.Frame.Y, _button.Frame.Width + 8, _button.Frame.Height);
+            _button.Layer.CornerRadius = 5;
+
+            _button2.Frame = new CGRect(_button2.Frame.X, _button2.Frame.Y, _button2.Frame.Width + 8, _button2.Frame.Height);
+            _button2.Layer.CornerRadius = 5;
         }
     }
 }
