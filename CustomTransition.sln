@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomTransition", "CustomTransition\CustomTransition.csproj", "{F742F186-FE76-454A-ACA9-176C48E520D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F742F186-FE76-454A-ACA9-176C48E520D5}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{F742F186-FE76-454A-ACA9-176C48E520D5}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{F742F186-FE76-454A-ACA9-176C48E520D5}.Release|iPhone.ActiveCfg = Release|iPhone
+		{F742F186-FE76-454A-ACA9-176C48E520D5}.Release|iPhone.Build.0 = Release|iPhone
+		{F742F186-FE76-454A-ACA9-176C48E520D5}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{F742F186-FE76-454A-ACA9-176C48E520D5}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{F742F186-FE76-454A-ACA9-176C48E520D5}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{F742F186-FE76-454A-ACA9-176C48E520D5}.Debug|iPhone.Build.0 = Debug|iPhone
+	EndGlobalSection
+EndGlobal
